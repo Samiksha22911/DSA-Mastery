@@ -56,6 +56,16 @@ Steps:
 Time Complexity : O(log₁₀ n)
 Space Complexity: O(1)
 
+----------------------------------------------------------------------
+Approach 2 : Reverse Half of the Number
+
+Idea:
+Reverse only half of the digits instead of the entire number.
+This avoids integer overflow and is the most optimized solution.
+
+Time Complexity : O(log₁₀ n)
+Space Complexity: O(1)
+
 ======================================================================
 */
 
@@ -67,7 +77,9 @@ int main(){
     cout<<"enter a number : ";
     cin>>n;
     int num = n;
-    
+      
+//Approach 1 : Reverse the Number
+
     // Edge case: Negative numbers are not palindromes
     if (n < 0 || (n % 10 == 0 && n != 0)){
         cout << "Not Palindrome" << endl;
@@ -88,32 +100,10 @@ int main(){
         cout<<"Not Palindrome"<<endl;
     }
 
-    return 0;
-}
+//Approach 2 : Reverse Half of the Number
 
-/*
-======================================================================
-Approach 2 : Reverse Half of the Number
-
-Idea:
-Reverse only half of the digits instead of the entire number.
-This avoids integer overflow and is the most optimized solution.
-
-Time Complexity : O(log₁₀ n)
-Space Complexity: O(1)
-
-======================================================================
-*/
-
-#include <iostream>
-using namespace std;
-int main(){
-    int n ; 
-    int reversedHalf = 0;
-    cout<<"enter a number : ";
-    cin>>n;
- 
-    // Edge case: Negative numbers are not palindromes
+int reversedHalf = 0;
+ // Edge case: Negative numbers are not palindromes
     if (n < 0 || (n % 10 == 0 && n != 0)) {
         cout << "Not Palindrome" << endl;
         return 0;
@@ -137,6 +127,6 @@ int main(){
     cout << "Not Palindrome" << endl;
     }
 
-return 0;
+    return 0;
 }
- 
+
